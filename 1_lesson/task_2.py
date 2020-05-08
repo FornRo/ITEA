@@ -7,4 +7,8 @@ def main():
     r = float(input())
     print('S = ', 3.1415 * (r * r)) 
 
+<<<<<<< HEAD
 main()
+=======
+main()
+>>>>>>> 40b39802f7fb2e2b31f58fc411210644fe324490
