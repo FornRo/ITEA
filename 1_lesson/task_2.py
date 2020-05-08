@@ -8,4 +8,3 @@ def main():
     print('S = ', 3.1415 * (r * r)) 
 
 main()
-#  dasdasd asd as
