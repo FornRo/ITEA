@@ -3,11 +3,13 @@
 разделенных запятой значений, на основе которой программа сформирует
 кортеж и список из этих значений.
 '''
+import collections
 
-def main():
-    lst = []
-    lst = input().split(', ')
-    tpl = tuple(lst)
-    print(lst)
-    print(tpl)
-main()
+lst = [1, 1, 1, 3, 2, 4, 4, 4, 10, 10, 10, 10, 10] #lst  = input()
+c = collections.Counter()
+for word in lst:
+    c[word] += 1
+print(c)
+print(list(c))
+
+# print(collections.Counter('abracadabra').most_common(3))

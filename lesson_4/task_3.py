@@ -10,7 +10,7 @@
 '''
 
 lst = [1, 1, 1, 3, 2, 4, 4, 4] #lst  = input()
-ans = lst[0], 0
+sect, ans = lst[0], 0
 lst = sorted(lst)
 print(sorted(lst))
 
