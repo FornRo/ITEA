@@ -9,9 +9,16 @@
 но 4 больше чем 1 по этому результат - 4
 '''
 
-lst = [1, 1, 1, 3, 2, 4, 4, 4] #lst  = input()
-sect, ans = lst[0], 0
-lst = sorted(lst)
-print(sorted(lst))
+import collections
 
-lst.count()
+
+def main(my_lst):
+    c = collections.Counter(my_lst)
+    c = dict(c)
+    print(c)
+
+
+inpt = [1, 1, 1, 3, 2, 4, 4, 4]  # lst  = input()
+print(inpt)
+
+main(inpt)
