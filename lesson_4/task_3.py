@@ -13,12 +13,21 @@ import collections
 
 
 def main(my_lst):
-    c = collections.Counter(my_lst)
-    c = dict(c)
-    print(c)
+    my_dict = dict(collections.Counter(my_lst))
+    max_key, max_series = 0, 0
+
+    for nbr in my_dict.items():
+        if (((nbr[0] > max_key) and (nbr[1] >= max_series)) or
+            (nbr[1] > max_series)
+            ):
+            max_key = nbr[0]
+            max_series = nbr[1]
+        print(nbr)
+
+    print(f'max число = {max_key}, max series = {max_series}')
+    print(f'Элемент который чаще всего повторяется {max_key}')
 
 
-inpt = [1, 1, 1, 3, 2, 4, 4, 4]  # lst  = input()
-print(inpt)
+inpt = [0, 0, 4, 4, 1, 1, 3, 2]  # lst  = input()
 
 main(inpt)
