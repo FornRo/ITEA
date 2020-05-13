@@ -7,11 +7,23 @@
 новыми данными.
 '''
 # ВремяВвода:ТекстКоторыйВвелПользователь
-import time 
-def main():
-file = open('time_text.txt', 'a')
-while True:
-    use_txt = input()
-    file.write(use_txt)
+import time
 
-file.close()
+
+def main():
+    print('? для получения инструкцыи')
+    file = open('lesson_5\\time_text.txt', 'a')
+    file.write(f'{time.strftime("%x")} \n')
+    while True:
+        use_txt = input()
+        if use_txt.lower() == 'stop':
+            if input('Вы хотите выйти? : ').lower() == 'yes':
+                break
+
+        else:
+            file.write(f'{time.strftime("%X")}: {use_txt} \n')
+
+    file.close()
+
+
+main()
