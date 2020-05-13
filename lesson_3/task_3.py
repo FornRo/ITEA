@@ -5,14 +5,15 @@
 
 
 def Turn_off(first, second):
+    first, second = float(first), float(second)
     if first == second:
-        print(True)
-    elif (float(first) + float(second) == 5):
-        print(True)
-    elif (float(first) - float(second) == 5):
-        print(True)
+        return True 
+    elif (abs(first + second) == 5):
+        return True
+    elif (abs(first - second) == 5):
+        return True
     else:
-        print(False)
+        return False
 
 
-Turn_off(input(), input())        
+print(Turn_off(input(), input()))

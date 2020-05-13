@@ -6,24 +6,16 @@
 новом запуске программы существующий файл должен дополняться
 новыми данными.
 '''
-# ВремяВвода:ТекстКоторыйВвелПользователь
 import time
 
-
 def main():
-    print('? для получения инструкцыи')
-    file = open('lesson_5\\time_text.txt', 'a')
-    file.write(f'{time.strftime("%x")} \n')
-    while True:
-        use_txt = input()
-        if use_txt.lower() == 'stop':
-            if input('Вы хотите выйти? : ').lower() == 'yes':
+    with open('lesson_5\\time_text.txt', 'a') as file:
+        file.write(f'{time.strftime("%x")} \n')
+        while True:
+            use_txt = input()
+            if use_txt.lower() == 'stop':
                 break
-
-        else:
-            file.write(f'{time.strftime("%X")}: {use_txt} \n')
-
-    file.close()
-
+            else:
+                file.write(f'{time.strftime("%X")}: {use_txt} \n')
 
 main()

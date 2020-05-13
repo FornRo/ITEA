@@ -14,9 +14,9 @@ def main(n):
     
     parity_chk = False # Проверка на отсутствия четности 
 
-    for i in range(n):
-        if lst[i] % 2 == 0:
-            print('Четное число', lst[i])
+    for i in lst:
+        if i % 2 == 0:
+            print('Четное число', i)
             parity_chk = True
             
     if parity_chk == False:
