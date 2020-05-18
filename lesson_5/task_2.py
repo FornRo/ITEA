@@ -8,6 +8,7 @@
 '''
 import time
 
+
 def main():
     with open('lesson_5\\time_text.txt', 'a') as file:
         file.write(f'{time.strftime("%x")} \n')
@@ -17,5 +18,6 @@ def main():
                 break
             else:
                 file.write(f'{time.strftime("%X")}: {use_txt} \n')
+
 
 main()

@@ -7,11 +7,13 @@
 import random
 import time
 
+
 def main():
     my_lst = []
-    start_time = time.time()
     for target_list in range(10 ** 5):
         my_lst.append(random.randint(0, 1000))
     print(len(my_lst))
-    print('this take of', round(time.time() - start_time, 4), 'second')
+
+start_time = time.time()
 main()
+print('this take for', round(time.time() - start_time, 4), 'second')

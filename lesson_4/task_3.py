@@ -13,6 +13,8 @@ import collections
 
 
 def main(my_lst):
+    print(dict(collections.Counter(my_lst)))
+
     my_dict = dict(collections.Counter(my_lst))
     max_key, max_series = 0, 0
 
