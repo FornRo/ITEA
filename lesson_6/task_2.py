@@ -4,22 +4,21 @@
 файл в режиме «append»
 '''
 import random
-import string
-
 
 def write_pass_in_file(pass_w):
     with open("lesson_6\\passwords.txt", 'a',  encoding="utf-8") as file:
-        file.write(pass_w)
+        file.write(f'{pass_w} \n')
 
 
 def generaion_pass():
+    strs = r'0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!"#$%&\'()*+,-./:;<=>?@_'
     pass_word = ''
     # 15's symbol in pass
-    for symbol in range(16):
-        letter = random.randint(0, 99)
-        pass_word += string.printable[letter]
+    for _ in range(16):
+        letter = random.randint(0, 85)
+        pass_word += strs[letter]
     return pass_word
 
 
-print(string.printable)
 write_pass_in_file(generaion_pass())
+
