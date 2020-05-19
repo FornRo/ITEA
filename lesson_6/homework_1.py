@@ -12,6 +12,8 @@ def main(func):
         file.write(f'{time.strftime("%x | %X")} : {func} \n')
 
 # sum()
+
+
 def func_sum(lst):
     lst, ans = list(lst), 0
     for i in lst:

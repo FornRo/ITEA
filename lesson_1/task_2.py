@@ -4,7 +4,10 @@
 на экран площадь.
 '''
 def main():
-    r = float(input())
-    print('S = ', 3.1415 * (r ** 2)) 
+    try:
+        r = float(input('Введите радиус окружности : '))
+        print('S = ', 3.1415 * (r ** 2)) 
+    except:
+        print("Что-то пошло не так")
 
 main()

@@ -5,7 +5,7 @@
 сообщение содержащее Имя Фамилию пользователя разделенное пробелом.
 '''
 def main():
-    name, first_name = input('Имя_'), input('Фамилию_')
+    name, first_name = input('Имя : '), input('Фамилию : ')
     print(name, first_name)
 
 main()

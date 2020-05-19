@@ -14,21 +14,24 @@
 '''
 import random
 import math
-
+import statistics
 
 # random >> list[min(long), max(long)]
+
+
 def generation(long):
     lst = []
     list(map(lambda gen: lst.append(random.randint(0, 100)), range(long)))
     return lst
-    # for target_list in range(long):
-    #    lst.append(random.randint(0, 100))
-    # return lst
 
 
 def my_sqrt(my_list):  # 2 ** 2
     print(list(map(lambda x: math.sqrt(x), my_list)))
     return list(map(lambda x: math.sqrt(x), my_list))
+
+
+def my_median(data_points):
+    return float(statistics.median(data_points))
 
 
 def my_filter(lst):  # filter
@@ -41,10 +44,14 @@ def my_filter(lst):  # filter
 
 
 ans_gnrt = generation(int(input()))
+print(ans_gnrt)
 ans_sqrt = my_sqrt(ans_gnrt)
-ans_filtre = filter(lambda x: i > (sum(lst / len(lst))))
-print(f'Медиана = {}')
-print(f'Результат = {ans_filtre}'
+print(ans_sqrt)
+ans_midn = my_median(ans_sqrt)
+print(ans_midn)
+ans_filtre = filter(lambda x: i > ans_midn, ans_sqrt)
+print(f'Медиана = {my_median}')
+print(f'Результат = {ans_filtre}')
 # print(f'Результат', my_filter(my_sqrt(generation(int(input()))))
 
 

@@ -4,7 +4,11 @@
 программа должна выводить на экран общую стоимость продуктов.
 '''
 def main():
-    tt, cost = int(input()), float(input())
-    print(tt * cost)
+    try:
+        tt, cost = int(input()), float(input())
+        print(tt * cost)
+    except:
+            print("Что-то пошло не так")
+
 
 main()
