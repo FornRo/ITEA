@@ -19,39 +19,27 @@ import statistics
 # random >> list[min(long), max(long)]
 
 
-def generation(long):
-    lst = []
-    list(map(lambda gen: lst.append(random.randint(0, 100)), range(long)))
+def generatn(long = 2):
+    try:
+        lst = []
+        list(map(lambda gen: lst.append(random.randint(0, 100)), range(long)))
+        return lst
+    except:
+        print("Что-то пошло не так")
+
+def next_do(lst = [1, 4, 9, 16, 25, 36, 49, 64, 98, 100]):
+    # квадрат
+    lst = list(map(lambda x: math.sqrt(x), lst))
     return lst
 
+my_lst = generatn(int(input()))
+# my_lst = [1, 4, 9, 16, 25, 36, 49, 64, 81, 100] # test
+my_lst = next_do(my_lst)
+mediana = float(statistics.median(my_lst))
 
-def my_sqrt(my_list):  # 2 ** 2
-    print(list(map(lambda x: math.sqrt(x), my_list)))
-    return list(map(lambda x: math.sqrt(x), my_list))
-
-
-def my_median(data_points):
-    return float(statistics.median(data_points))
-
-
-def my_filter(lst):  # filter
-    ans = []
-    for i in lst:
-        if i > (sum(lst) / len(lst)):
-            ans.append(i)
-    print(ans)
-    return ans
-
-
-ans_gnrt = generation(int(input()))
-print(ans_gnrt)
-ans_sqrt = my_sqrt(ans_gnrt)
-print(ans_sqrt)
-ans_midn = my_median(ans_sqrt)
-print(ans_midn)
-ans_filtre = filter(lambda x: i > ans_midn, ans_sqrt)
-print(f'Медиана = {my_median}')
-print(f'Результат = {ans_filtre}')
+ans_finish = list(filter(lambda x: x > mediana, my_lst))
+print(f'Медиана = {mediana}')
+print(f'Результат = {ans_finish}')
 # print(f'Результат', my_filter(my_sqrt(generation(int(input()))))
 
 
