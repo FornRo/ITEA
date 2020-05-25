@@ -19,7 +19,7 @@ import statistics
 # random >> list[min(long), max(long)]
 
 
-def generatn(long = 2):
+def generat(long = 2):
     try:
         lst = []
         list(map(lambda gen: lst.append(random.randint(0, 100)), range(long)))
@@ -27,22 +27,16 @@ def generatn(long = 2):
     except:
         print("Что-то пошло не так")
 
-def next_do(lst = [1, 4, 9, 16, 25, 36, 49, 64, 98, 100]):
-    # квадрат
+# квадрат
+def sqrt_list(lst): 
     lst = list(map(lambda x: math.sqrt(x), lst))
     return lst
 
-my_lst = generatn(int(input()))
-# my_lst = [1, 4, 9, 16, 25, 36, 49, 64, 81, 100] # test
-my_lst = next_do(my_lst)
+my_lst = generat(int(input()))
+#my_lst = [1, 4, 9, 16, 25, 36, 49, 64, 81, 100] # test
+my_lst = sqrt_list(my_lst)
 mediana = float(statistics.median(my_lst))
 
 ans_finish = list(filter(lambda x: x > mediana, my_lst))
 print(f'Медиана = {mediana}')
 print(f'Результат = {ans_finish}')
-# print(f'Результат', my_filter(my_sqrt(generation(int(input()))))
-
-
-# print(generation(4))
-# test = [4, 9, 16, 25, 36]
-# print(my_sqrt(test))
