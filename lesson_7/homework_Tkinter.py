@@ -69,11 +69,15 @@ class Block:
             for i in file:
                 self.l_box.insert(0, i)
 
-        Button(self.cont, comman=self.clear_list,
-               text='Очистить список',
-               width=20).pack(side='right',
-                              padx=3,
-                              pady=3)
+        Button(
+            self.cont,
+            comman=self.clear_list,
+            text='Очистить список',
+            width=20
+        ).pack(
+            side='right',
+            padx=3,
+            pady=3)
         self.l_box.pack(padx=3, pady=3)
         self.cont.mainloop()
 
